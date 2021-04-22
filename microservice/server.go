@@ -2,23 +2,22 @@
 package microservice
 
 import (
-    "fmt"
-    "net/http"
+	"fmt"
+	"net/http"
 )
 
 func NewServer(host string, port string) *http.Server {
-    addr := fmt.Sprintf("%s:%s", host, port)
+	addr := fmt.Sprintf("%s:%s", host, port)
 
-    mux := http.NewServeMux()
-    mux.HandleFunc("/", handler)
+	mux := http.NewServeMux()
+	mux.HandleFunc("/", handler)
 
-    return &http.Server{
-        Addr:    addr,
-        Handler: mux,
-    }   
+	return &http.Server{
+		Addr:    addr,
+		Handler: mux,
+	}
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Hello World!\n")
+	fmt.Fprintf(w, "Hello Sai Ananth!\n")
 }
-
